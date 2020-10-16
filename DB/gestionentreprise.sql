@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 16 oct. 2020 à 14:40
+-- Généré le : ven. 16 oct. 2020 à 14:44
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.5
 
@@ -42,6 +42,28 @@ CREATE TABLE IF NOT EXISTS `agent` (
 INSERT INTO `agent` (`pseudo`, `pwd`, `equipe`) VALUES
 ('La_Saliere', 'incroyable', 2),
 ('Potez', 'martin', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `equipe`
+--
+
+CREATE TABLE IF NOT EXISTS `equipe` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `equipe`
+--
+
+INSERT INTO `equipe` (`id`, `nom`) VALUES
+(1, 'Maintenance'),
+(2, 'DSI'),
+(3, 'Direction'),
+(4, 'Manager');
 
 --
 -- Contraintes pour les tables déchargées
