@@ -1,0 +1,44 @@
+La société "ForTheHorde" souhaite désormais mettre en place un système de gestion de son activité.
+Pour cela, elle a besoin d'une gestion de ses employés et des produits qu'elle vend également.
+La société est spécialisée dans la vente de véhicules (voitures, moto, camion, utilitaires).
+
+Elle a, pour cela, des équipes de personnes aux tâches diverses :
+-> La direction (se charge des fonctions administratives)
+-> La maintenance (se charge des réparations et interventions techniques)
+-> La DSI (se charge des applications informatiques et outils de l'entreprises)
+
+-> Il existe également des Managers qui se chargent de l'évolution des carrières de chacun et peuvent donc accéder aux informations des employés sous leurs ailes.
+
+-> Les personnes de la Maintenance peuvent alimenter les informations des véhicules (ajouter, modifier, supprimer)
+-> Les personnes de la DSI peuvent accéder à toutes les informations des personnes sauf de la Direction
+-> La direction a accès à TOUTES les informations de l'entreprise.
+
+Mettre en place une application de gestion qui permettra de:
+-> se connecter grâce à son compte utilisateurs
+---> chaque utilisateur peut :
+------> modifier son pseudo, son telephone, son adresse mail
+------> consulter ses messages privés
+------> envoyer des messages privés à quelqu'un grâce à son pseudo (chaque pseudo doit être unique)
+---> quand un utilisateur est correctement connecté, il accède à son portail de travail (selon l'équipe dans laquelle il est)
+------> se déconnecter (retour à l'accueil général de l'application)
+
+-> se connecter aux services Maintenance pour gérer le parc de véhicules à vendre
+----> ajouter un véhicule à vendre / modifier / supprimer
+----> gérer les réparations (déduire les frais des chiffres de vente du mois)
+----> mettre à jour le chiffre de vente du mois quand un véhicule est vendu (gérer la vente de véhicules)
+
+-> se connecter aux services de la DSI pour gérer les utilisateurs de l'entreprise
+----> ajouter un utilisateur / modifier / supprimer (sauf sur les personnes de la Direction)
+----> changer le mot de passe d'un utilisateur si besoin (sauf sur les personnes de la Direction)
+
+-> se connecter aux services de la Direction pour gérer l'administratif de l'entreprise
+----> afficher les chiffres de vente du mois
+----> afficher le salaire d'un employé / modifier (augmentation, primes, etc)
+----> calculer le salaire d'un employé (nombre d'heure travaillées du mois * tarif journalier)
+----> demander la suppression d'un employé à la DSI (suite à licenciement, démission)
+
+Le but du TP est d'imaginer une BDD qui permettra une gestion efficace du besoin (des classes devront être créées côté C# et l'héritage sera primordial) :
+-> Exemple : Classe Personnes (mère)
+-------------> Classe Direction (fille)
+-------------> Classe Maintenance (fille)
+-------------> Classe Dsi (fille)
