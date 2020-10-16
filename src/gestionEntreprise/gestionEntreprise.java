@@ -11,7 +11,7 @@ public class gestionEntreprise {
         Agent loggedAgent = null;
         int userAction = -1;
         do{
-            if(loggedAgent != null){
+            if(loggedAgent == null){
                 System.out.println("* ----------------- *");
                 System.out.println("* 1---Connexion---- *");
                 System.out.println("* 0----Quitter----- *");

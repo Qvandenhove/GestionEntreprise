@@ -70,7 +70,8 @@ public abstract class Agent {
                         exit = scan.next().equals("N");
                     }
                 } else {
-                    System.out.println("Cet identifiants n'existe pas");
+                    System.out.println("Cet identifiants n'existe pas. Voulez vous réessayer ?(O / N)");
+                    exit = scan.next().equals("N");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
