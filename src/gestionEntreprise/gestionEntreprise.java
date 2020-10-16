@@ -8,7 +8,8 @@ public class gestionEntreprise {
     public static Database database = new Database("jdbc:mysql://localhost:3306/gestionentreprise", "root", "");
 
     public static void main(String[] args){
-        Agent loggedAgent = null;
+//        Agent loggedAgent = null;
+        Agent loggedAgent = new AgentDSI("La_Saliere");
         int userAction = -1;
         do{
             if(loggedAgent == null){

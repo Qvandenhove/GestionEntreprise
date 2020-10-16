@@ -18,6 +18,7 @@ public class Database {
             System.out.println("Bonjour");
             Class.forName("com.mysql.jdbc.Driver");
             setConnec(DriverManager.getConnection(link, user, passwd));
+            connec.setAutoCommit(false);
         }catch(Exception e){
              e.printStackTrace();
             System.out.println("Une erreur est survenue, merci de reesayer plus tard.");
