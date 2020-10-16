@@ -8,37 +8,30 @@ public class gestionEntreprise {
     public static Database database = new Database("jdbc:mysql://localhost:3306/gestionentreprise", "root", "");
 
     public static void main(String[] args){
-
-        int userAction;
-        String userPseudo;
-        String userPasswd;
         Agent loggedAgent = null;
-        String inBasePwd = null;
-        int agentTeam = 0;
-        ResultSet credentials;
+        int userAction = -1;
         do{
-            System.out.print("Quel est votre pseudo : ");
-            userPseudo = scan.next();
-            System.out.print("Quel est votre mot de passe : ");
-            userPasswd = scan.next();
-            credentials = database.getAgent(userPseudo);
-            if (credentials != null){
-                try{
-                    while(credentials.next()){
-                        inBasePwd = credentials.getString(1);
-                        agentTeam = credentials.getInt(2);
+            if(loggedAgent != null){
+                System.out.println("* ----------------- *");
+                System.out.println("* 1---Connexion---- *");
+                System.out.println("* 0----Quitter----- *");
+                System.out.println("* ----------------- *");
+                System.out.println("Choisissez une option");
+                userAction = scan.nextInt();
+                switch(userAction){
+                    case 1 ->{
+                        // Connexion de l'agent
+                        loggedAgent = Agent.login();
                     }
-                    loggedAgent = Agent.login(userPseudo, inBasePwd, userPasswd,  agentTeam);
-                }catch(SQLException e){
-                    e.printStackTrace();
+
+                    case 0 ->{
+                        // Avant de quitter
+                    }
                 }
-                if(loggedAgent != null){
-                    System.out.println("Bonjour " + loggedAgent.getPseudoAgent());
-                }
+            }else{
+                loggedAgent.menu();
             }
 
-
-
-        }while(false);
+        }while(userAction != 0);
     }
 }
