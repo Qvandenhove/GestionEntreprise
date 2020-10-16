@@ -3,7 +3,7 @@ package gestionEntreprise;
 import java.sql.*;
 import java.util.Scanner;
 
-public class Main {
+public class gestionEntreprise {
     public static Scanner scan = new Scanner(System.in);
     public static Database database = new Database("jdbc:mysql://localhost:3306/gestionentreprise", "root", "");
 
