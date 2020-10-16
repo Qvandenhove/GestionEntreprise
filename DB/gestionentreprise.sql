@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 16 oct. 2020 à 10:12
+-- Généré le : ven. 16 oct. 2020 à 14:40
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.5
 
@@ -40,29 +40,8 @@ CREATE TABLE IF NOT EXISTS `agent` (
 --
 
 INSERT INTO `agent` (`pseudo`, `pwd`, `equipe`) VALUES
-('La_Saliere', 'incroyable', 2);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `équipe`
---
-
-CREATE TABLE IF NOT EXISTS `équipe` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `équipe`
---
-
-INSERT INTO `équipe` (`id`, `nom`) VALUES
-(1, 'Maintenance'),
-(2, 'DSI'),
-(3, 'Direction'),
-(4, 'Manager');
+('La_Saliere', 'incroyable', 2),
+('Potez', 'martin', 1);
 
 --
 -- Contraintes pour les tables déchargées
@@ -72,7 +51,7 @@ INSERT INTO `équipe` (`id`, `nom`) VALUES
 -- Contraintes pour la table `agent`
 --
 ALTER TABLE `agent`
-  ADD CONSTRAINT `equipe_fk` FOREIGN KEY (`equipe`) REFERENCES `équipe` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `equipe_fk` FOREIGN KEY (`equipe`) REFERENCES `equipe` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
